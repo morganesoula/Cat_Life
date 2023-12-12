@@ -23,7 +23,6 @@ output.json
 *.jks
 *.keystore
 data.properties
-keystore.properties
 
 # Google Services (e.g. APIs or Firebase)
 app/google-services.json
