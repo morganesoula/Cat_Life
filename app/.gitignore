@@ -3,7 +3,7 @@
 build/
 
 # Local configuration file (sdk path, etc)
-local.properties
+../local.properties
 
 # Log/OS Files
 *.log
@@ -23,6 +23,7 @@ output.json
 *.jks
 *.keystore
 data.properties
+../keystore.properties
 
 # Google Services (e.g. APIs or Firebase)
 google-services.json
