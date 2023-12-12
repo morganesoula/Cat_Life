@@ -16,4 +16,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Cat Life"
-include ("com.msoula.catlife:app")
+include ("app")

@@ -1,0 +1,37 @@
+CREATE TABLE IF NOT EXISTS catEntity (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    name TEXT NOT NULL,
+    profilePicturePath TEXT NOT NULL,
+    gender INTEGER AS kotlin.Boolean NOT NULL DEFAULT 0,
+    neutered INTEGER AS kotlin.Boolean NOT NULL DEFAULT 1,
+    birthdate INTEGER NOT NULL,
+    weight REAL AS kotlin.Float NOT NULL,
+    race TEXT NOT NULL,
+    coat TEXT NOT NULL,
+    diseases TEXT DEFAULT NULL ,
+    vaccineDate INTEGER DEFAULT NULL,
+    dewormingDate INTEGER DEFAULT NULL,
+    fleaDate INTEGER DEFAULT NULL
+);
+
+insertCat:
+INSERT OR REPLACE
+INTO catEntity
+VALUES(?,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+deleteCat:
+DELETE FROM catEntity
+WHERE id = :id;
+
+getCatById:
+SELECT *
+FROM catEntity
+WHERE id = :id;
+
+getAllCats:
+SELECT *
+FROM catEntity;
+
+lastInsertRowId:
+SELECT last_insert_rowId();
+

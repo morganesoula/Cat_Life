@@ -1,3 +1,184 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name" translatable="false">Cat Life</string>
+    <string name="add_cat_title">Add a new cat</string>
+    <string name="update_cat_title">Update cat</string>
+    <string name="back">Back</string>
+    <string name="events_main_page_title">Next events</string>
+    <string name="your_cats_main_page_title">Your cats</string>
+    <string name="your_stock_main_page_title">Almost out</string>
+
+    // Form
+    <string name="cat_name">Cat name</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="uri_cat_picture">Uri for cat picture</string>
+    <string name="weight">Weight (lbs)</string>
+    <string name="coat_placeholder">Color of the fur</string>
+    <string name="birthdate">Birthdate</string>
+    <string name="add_birthdate">Add birthdate</string>
+    <string name="update_birthdate">Update birthdate</string>
+    <string name="add_vaccine">Add last vaccine shot date</string>
+    <string name="add_deworming">Add last deworming treatment date</string>
+    <string name="add_flea">Add last flea treatment date</string>
+    <string name="race">Race</string>
+    <string name="diseases">Known diseases (optional):</string>
+    <string name="last_vaccine">Date of last vaccine</string>
+    <string name="last_de_worming">Date of last de-worming</string>
+    <string name="last_flea_treatment">Date of last flea treatment</string>
+    <string name="submit_cat">Add</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="cancel">Cancel</string>
+    <string name="neutered">Neutered</string>
+    <string name="neutered_female">Neutered</string>
+    <string name="update_general_btn">Update</string>
+    <string name="clear_date_content">Clear date data</string>
+    <string name="pick_cat">Pick cat</string>
+    <string name="cat_not_birthed">Cat not birthed yet</string>
+    <string name="optional">Optional</string>
+    <string name="confirm">Confirm</string>
+
+    // Navigation Bar
+    <string name="home_nav_label">Home</string>
+    <string name="calendar_nav_label">Calendar</string>
+    <string name="note_nav_label">Note</string>
+    <string name="inventory_nav_label">Inventory</string>
+
+    // Form error
+    <string name="inconsistent">Inconsistent value</string>
+    <string name="should_not_be_empty">Field should not be empty</string>
+
+    // Home screen
+    <string name="no_cats_text">Welcome to CatLife! Start using this application by adding a new cat!</string>
+    <string name="today">Today</string>
+    <string name="no_events_text">No upcoming events at the moment</string>
+
+    // Cat race
+    <string name="abyssinian">Abyssinian</string>
+    <string name="american_bobtail">American Bobtail</string>
+    <string name="american_curl">American Curl</string>
+    <string name="american_shorthair">American Shorthair</string>
+    <string name="american_wirehair">American Wirehair</string>
+    <string name="arabian_mau">Arabian Mau</string>
+    <string name="australian_mist">Australian Mist</string>
+    <string name="balinese">Balinese</string>
+    <string name="bambino">Bambino</string>
+    <string name="bengal">Bengal</string>
+    <string name="birman">Birman</string>
+    <string name="bombay">Bombay</string>
+    <string name="british_longhair">British Longhair</string>
+    <string name="british_shorthair">British Shorthair</string>
+    <string name="burmese">Burmese</string>
+    <string name="california_spangled">Californian Spangled</string>
+    <string name="chantilly_tiffany">Chantilly-Tiffany</string>
+    <string name="chartreux">Chartreux</string>
+    <string name="chausie">Chausie</string>
+    <string name="cheetoh">Cheetoh</string>
+    <string name="colorpoint_shorthair">Colorpoint Shorthair</string>
+    <string name="cornish_rex">Cornish Rex</string>
+    <string name="cymric">Cymric</string>
+    <string name="cyprus">Cyprus</string>
+    <string name="devon_rex">Devon Rex</string>
+    <string name="donskoy">Donskoy</string>
+    <string name="dragon_li">Dragon Li</string>
+    <string name="egyptian_mau">Egyptian Mau</string>
+    <string name="european">European</string>
+    <string name="european_burmese">European Burmese</string>
+    <string name="exotic_shorthair">Exotic Shorthair</string>
+    <string name="havana_brown">Havana Brown</string>
+    <string name="himalayan">Himalayan</string>
+    <string name="japanese_bobtail">Japanese Bobtail</string>
+    <string name="javanese">Javanese</string>
+    <string name="khao_manee">Khao Manee</string>
+    <string name="korat">Korat</string>
+    <string name="kurilian">Kurilian Bobtail</string>
+    <string name="laperm">LaPerm</string>
+    <string name="maine_coon">Maine Coon</string>
+    <string name="malayan">Malayan</string>
+    <string name="manx">Manx</string>
+    <string name="munchkin">Munchkin</string>
+    <string name="nebelung">Nebelung</string>
+    <string name="norwegian_forest_cat">Norwegian Forest Cat</string>
+    <string name="ocicat">Ocicat</string>
+    <string name="oriental">Oriental</string>
+    <string name="persian">Persian</string>
+    <string name="pixie_bob">Pixie Bob</string>
+    <string name="ragamuffin">Ragamuffin</string>
+    <string name="ragdoll">Ragdoll</string>
+    <string name="russian_blue">Russian Blue</string>
+    <string name="savannah">Savannah</string>
+    <string name="scottish_fold">Scottish Fold</string>
+    <string name="selkirk_rex">Slekirk Rex</string>
+    <string name="siamese">Siamese</string>
+    <string name="siberian">Siberian</string>
+    <string name="singapura">Singapura</string>
+    <string name="snowshoe">Snowshoe</string>
+    <string name="somali">Somali</string>
+    <string name="sphynx">Sphynx</string>
+    <string name="tonkinese">Tonkinese</string>
+    <string name="toyger">Toyger</string>
+    <string name="turkish_angora">Turkish Angora</string>
+    <string name="turkish_van">Turkish Van</string>
+    <string name="york_chocolate">York Chocolate</string>
+    <string name="blank_error">Mandatory field</string>
+    <string name="wrong_input_format">Wrong input format</string>
+    <string name="weight_error">Weight should be between 0.1 lbs and 49 lbs</string>
+    <string name="no_number_allowed">Numbers are not allowed</string>
+
+    // Cat detail screen
+    <string name="fur">Fur</string>
+    <string name="race_title">Race</string>
+    <string name="weight_title">Weight</string>
+    <string name="lbs">lbs</string>
+    <string name="delete_confirmation">Do you really want to delete this element?</string>
+    <string name="medical_title">Medical</string>
+    <string name="gender_title">Gender</string>
+    <string name="important_title">Important</string>
+
+    // Event detail screen
+    <string name="date_title">Date</string>
+    <string name="schedule_title">Schedule</string>
+    <string name="information_title">Information</string>
+
+    // Inventory
+    <string name="quantity_title">Quantity</string>
+    <string name="add_submit_text_button">Add</string>
+    <string name="quantity_error_inferior">Can not be inferior to 0</string>
+    <string name="quantity_error_superior">Can not be superior to 999</string>
+    <string name="label_title">Label</string>
+    <string name="not_only_number">Label can not only contain number</string>
+    <string name="number_only">Field only accepts numbers</string>
+    <string name="add_new_inventory_item_title">Add a new item</string>
+    <string name="no_inventory_items_title">No item found</string>
+
+    // Calendar
+    <string name="add_event_title">Add new event</string>
+    <string name="submit_event_title">Add</string>
+    <string name="current_event_title_text">Title</string>
+    <string name="current_event_description_text">Description (optional)</string>
+    <string name="current_event_place_text">Place</string>
+    <string name="current_event_all_day_text">All day</string>
+    <string name="start">Start</string>
+    <string name="end">End</string>
+    <string name="to_define">To define</string>
+    <string name="earlier_end_date_error">End date cannot be earlier than start date</string>
+    <string name="earlier_end_time_error">End time cannot be earlier than start time</string>
+    <string name="same_time_error">Start and end time cannot be identical</string>
+    <string name="unknown_place">Unknown place</string>
+    <string name="update_event_title">Update event</string>
+    <string name="earlier_current_day_error">Can\'t define an event earlier than today</string>
+    <string name="network_needed_map">Network needed to display the map</string>
+    <string name="network_needed_places">Network required for address autocompletion</string>
+
+    // Note
+    <string name="add_note_title">Add new note</string>
+    <string name="no_note_title">No note found</string>
+    <string name="submit_note_title">Add</string>
+    <string name="update_note_title">Updating this note</string>
+    <string name="note_title_title_text">Title</string>
+    <string name="note_description_title_text">Description</string>
+
+    // Test tags
+    <string name="place_switch_test_tag">Place switch</string>
+    <string name="cant_be_in_the_future">No future date allowed</string>
 </resources>

@@ -1,0 +1,33 @@
+CREATE TABLE IF NOT EXISTS inventoryItemEntity (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    label TEXT NOT NULL,
+    quantity INTEGER AS kotlin.Int NOT NULL
+);
+
+insertInventoryItem:
+INSERT OR REPLACE
+INTO inventoryItemEntity
+VALUES (?,?, ?);
+
+deleteInventoryItemById:
+DELETE FROM inventoryItemEntity
+WHERE id = :id;
+
+getAllInventoryItem:
+SELECT *
+FROM inventoryItemEntity;
+
+getInventoryItemById:
+SELECT *
+FROM inventoryItemEntity
+WHERE id = :id;
+
+getInventoryItemsWithLowQuantity:
+SELECT *
+FROM inventoryItemEntity
+WHERE quantity <= 1;
+
+updateInventoryItemQuantity:
+UPDATE inventoryItemEntity
+SET quantity = :quantity
+WHERE id = :id;

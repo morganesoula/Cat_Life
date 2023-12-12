@@ -1,0 +1,47 @@
+CREATE TABLE IF NOT EXISTS customEventEntity (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    title TEXT NOT NULL,
+    description TEXT,
+    place TEXT NOT NULL,
+    placeLat TEXT NOT NULL,
+    placeLng TEXT NOT NULL,
+    startDate INTEGER NOT NULL,
+    endDate INTEGER NOT NULL,
+    startTime TEXT NOT NULL,
+    endTime TEXT NOT NULL,
+    allDay INTEGER AS kotlin.Boolean NOT NULL DEFAULT 0
+);
+
+insertEvent:
+INSERT OR REPLACE
+INTO customEventEntity
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+
+deleteEventById:
+DELETE FROM customEventEntity
+WHERE id = :id;
+
+getAllEvents:
+SELECT *
+FROM customEventEntity;
+
+getEventById:
+SELECT *
+FROM customEventEntity
+WHERE id = :id;
+
+getEventsAccordingToDay:
+SELECT *
+FROM customEventEntity
+WHERE startDate = :currentDate
+OR endDate = :currentDate;
+
+fetchNextEventsToCome:
+SELECT *
+FROM customEventEntity
+WHERE startDate
+BETWEEN :currentDate
+AND :twoWeeksDelay;
+
+lastInsertRowId:
+SELECT last_insert_rowId();
