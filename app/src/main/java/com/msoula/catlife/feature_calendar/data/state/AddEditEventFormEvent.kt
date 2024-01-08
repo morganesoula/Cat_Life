@@ -1,5 +1,6 @@
 package com.msoula.catlife.feature_calendar.data.state
 
+import com.google.android.libraries.places.api.model.AutocompleteSessionToken
 import java.time.LocalDate
 import java.time.LocalTime
 
@@ -9,9 +10,9 @@ sealed interface AddEditEventFormEvent {
     data class OnEventDescriptionChanged(val description: String) : AddEditEventFormEvent
     data class OnEventPlaceChanged(val place: String) : AddEditEventFormEvent
     data class OnEventPlaceSelected(
+        val placeId: String,
         val address: String,
-        val latitude: Double,
-        val longitude: Double
+        val token: AutocompleteSessionToken
     ) : AddEditEventFormEvent
 
     data class OnEventStartDateChanged(val startDate: LocalDate) : AddEditEventFormEvent

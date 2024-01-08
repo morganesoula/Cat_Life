@@ -1,8 +1,8 @@
 package com.msoula.catlife.core.presentation.navigation
 
-import android.util.Log
 import androidx.annotation.StringRes
 import androidx.compose.foundation.border
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.DateRange
@@ -92,7 +92,6 @@ fun BottomBar(
                     },
                 selected = if (destination.direction.route.contains("calendar") && currentDestination.route.contains("calendar")) true else currentDestination == destination.direction,
                 onClick = {
-                    Log.i("XXX", "CurrentDestinatio: $currentDestination ---- Destination direction: ${destination.direction}")
                     navController.navigate(destination.direction) {
                         popUpTo(NavGraphs.root.startAppDestination)
                         launchSingleTop = true
@@ -108,9 +107,9 @@ fun BottomBar(
                 label = { Text(text = stringResource(id = destination.label)) },
                 colors = NavigationBarItemDefaults.colors(
                     selectedIconColor = colorScheme.secondary,
-                    unselectedIconColor = Color.DarkGray,
+                    unselectedIconColor = if (isSystemInDarkTheme()) Color.White.copy(alpha = 0.4f) else Color.DarkGray,
                     selectedTextColor = colorScheme.secondary,
-                    unselectedTextColor = Color.DarkGray,
+                    unselectedTextColor = if (isSystemInDarkTheme()) Color.White.copy(alpha = 0.4f) else colorScheme.onSurfaceVariant,
                     indicatorColor = colorScheme.onSecondary
                 )
             )

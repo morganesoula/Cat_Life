@@ -1,6 +1,6 @@
 package com.msoula.catlife.di
 
-import com.msoula.catlife.feature_calendar.custom_places.data.service.PlaceAPI
+import com.google.android.libraries.places.api.net.PlacesClient
 import com.msoula.catlife.feature_calendar.custom_places.domain.use_case.FetchPlaceUseCase
 import dagger.Module
 import dagger.Provides
@@ -13,6 +13,6 @@ import javax.inject.Singleton
 object PlaceUseCaseModule {
     @Provides
     @Singleton
-    fun provideFetchPlaceUseCase(placeAPI: PlaceAPI): FetchPlaceUseCase =
-        FetchPlaceUseCase(placeAPI)
+    fun provideFetchPlaceUseCase(placeClient: PlacesClient): FetchPlaceUseCase =
+        FetchPlaceUseCase(placeClient)
 }

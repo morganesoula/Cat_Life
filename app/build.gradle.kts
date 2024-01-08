@@ -69,8 +69,8 @@ android {
         applicationId = "com.msoula.catlife"
         minSdk = 26
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 7
+        versionName = "1.0.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
@@ -149,6 +149,7 @@ dependencies {
     kaptTest(libs.dagger.hilt.android.compiler)
     kaptAndroidTest(libs.dagger.hilt.android.compiler)
     testImplementation(libs.turbine)
+    testImplementation(libs.mockk)
 
     // Android Test
     androidTestImplementation(libs.runner)

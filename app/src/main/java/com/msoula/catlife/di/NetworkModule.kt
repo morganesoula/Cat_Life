@@ -1,10 +1,13 @@
 package com.msoula.catlife.di
 
+import android.content.Context
+import com.google.android.libraries.places.api.Places
+import com.google.android.libraries.places.api.net.PlacesClient
 import com.msoula.catlife.core.util.Constant
-import com.msoula.catlife.feature_calendar.custom_places.data.service.PlaceAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -41,6 +44,6 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun providePlaceAPI(retrofit: Retrofit): PlaceAPI =
-        retrofit.create(PlaceAPI::class.java)
+    fun providePlaceClient(@ApplicationContext context: Context): PlacesClient =
+        Places.createClient(context)
 }
