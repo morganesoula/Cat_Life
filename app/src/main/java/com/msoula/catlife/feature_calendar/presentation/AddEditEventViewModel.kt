@@ -4,7 +4,8 @@ import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.msoula.catlife.BuildConfig.MAPS_API_KEY
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.libraries.places.api.model.AutocompleteSessionToken
 import com.msoula.catlife.R
 import com.msoula.catlife.core.domain.use_case.ValidationResult
 import com.msoula.catlife.core.presentation.OnLifecycleEvent
@@ -108,11 +109,13 @@ class AddEditEventViewModel @Inject constructor(
             }
 
             is AddEditEventFormEvent.OnEventPlaceSelected -> {
+                viewModelScope.launch {
+                    getPlaceDetails(event.placeId, event.token)
+                }
+
                 _state.update {
                     it.copy(
                         currentEventPlace = event.address,
-                        currentEventPlaceLat = event.latitude,
-                        currentEventPlaceLng = event.longitude
                     )
                 }
 
@@ -426,7 +429,6 @@ class AddEditEventViewModel @Inject constructor(
 
     @Suppress("UNCHECKED_CAST")
     private fun getPredictionsForGivenAddress(address: String) {
-        println("XXX Getting predictions list")
         viewModelScope.launch(ioDispatcher) {
             getPredictionsResponse(address).collect { stateList ->
                 when (stateList) {
@@ -459,10 +461,24 @@ class AddEditEventViewModel @Inject constructor(
         emit(State.LoadingState)
         try {
             delay(300)
-            emit(State.DataState(fetchPlaceUseCase(address, MAPS_API_KEY)))
+            emit(State.DataState(fetchPlaceUseCase(address)))
         } catch (exception: Exception) {
             exception.printStackTrace()
             emit(exception.resolveError())
+        }
+    }
+
+    private suspend fun getPlaceDetails(placeId: String, token: AutocompleteSessionToken) {
+        val latLng: LatLng = withContext(ioDispatcher) {
+            val result = fetchPlaceUseCase.getPlaceLatLng(placeId, token)
+            LatLng(result.latitude, result.longitude)
+        }
+
+        _state.update {
+            it.copy(
+                currentEventPlaceLat = latLng.latitude,
+                currentEventPlaceLng = latLng.longitude
+            )
         }
     }
 }

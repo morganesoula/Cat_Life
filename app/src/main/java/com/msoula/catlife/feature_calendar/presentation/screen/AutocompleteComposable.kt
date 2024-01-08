@@ -38,6 +38,7 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import com.msoula.catlife.extension.setToBold
 import com.msoula.catlife.feature_calendar.custom_places.data.CustomPlace
 import notEmpty
 
@@ -89,7 +90,7 @@ fun <T> AutoCompleteTextView(
                 if (predictions.notEmpty()) {
                     items(predictions) { prediction ->
                         Row(
-                            Modifier
+                            modifier
                                 .padding(8.dp)
                                 .fillMaxWidth()
                                 .clickable {
@@ -100,11 +101,14 @@ fun <T> AutoCompleteTextView(
                                     contentDescription = "autocomplete"
                                 }
                         ) {
+                            val text = when (prediction) {
+                                is CustomPlace -> setToBold(prediction.address, query)
+                                else -> setToBold(prediction.toString(), query)
+                            }
+
                             Text(
-                                text = when (prediction) {
-                                    is CustomPlace -> prediction.address
-                                    else -> prediction.toString()
-                                }, style = MaterialTheme.typography.bodyMedium
+                                text = text,
+                                style = MaterialTheme.typography.bodyMedium
                             )
                         }
                     }

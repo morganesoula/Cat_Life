@@ -157,9 +157,9 @@ fun AddEditEventFormScreen(
                 onItemClick = {
                     onUiEvent(
                         AddEditEventFormEvent.OnEventPlaceSelected(
+                            it.id,
                             it.address,
-                            it.geometry.location.latitude,
-                            it.geometry.location.longitude
+                            it.token
                         ),
                         onEventAddedOrUpdated
                     )

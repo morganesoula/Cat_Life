@@ -1,34 +1,71 @@
 package com.msoula.catlife.feature_calendar.custom_places.domain.use_case
 
-import com.google.gson.Gson
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.libraries.places.api.model.AutocompleteSessionToken
+import com.google.android.libraries.places.api.model.Place
+import com.google.android.libraries.places.api.model.PlaceTypes
+import com.google.android.libraries.places.api.net.FetchPlaceRequest
+import com.google.android.libraries.places.api.net.FetchPlaceResponse
+import com.google.android.libraries.places.api.net.FindAutocompletePredictionsRequest
+import com.google.android.libraries.places.api.net.FindAutocompletePredictionsResponse
+import com.google.android.libraries.places.api.net.PlacesClient
+import com.msoula.catlife.feature_calendar.custom_places.data.CustomLocation
 import com.msoula.catlife.feature_calendar.custom_places.data.CustomPlace
-import com.msoula.catlife.feature_calendar.custom_places.data.service.PlaceAPI
+import com.msoula.catlife.feature_calendar.custom_places.data.CustomPlaceCoordinates
 import javax.inject.Inject
+import kotlin.coroutines.Continuation
+import kotlin.coroutines.resume
+import kotlin.coroutines.resumeWithException
+import kotlin.coroutines.suspendCoroutine
 
-class FetchPlaceUseCase @Inject constructor(private val placeAPI: PlaceAPI) {
+class FetchPlaceUseCase @Inject constructor(
+    private val placesClient: PlacesClient
+) {
 
     suspend operator fun invoke(
-        address: String,
-        apiKey: String
-    ): List<CustomPlace> {
-        val data: MutableList<CustomPlace> = mutableListOf()
+        addressSearched: String
+    ): List<CustomPlace> = suspendCoroutine { continuation ->
+        val token = AutocompleteSessionToken.newInstance()
 
-        val response = placeAPI.getPlacesForGivenAddress(address, apiKey)
-            .get("results")?.asJsonArray
+        val request = FindAutocompletePredictionsRequest.builder()
+            .setTypesFilter(listOf(PlaceTypes.ADDRESS))
+            .setSessionToken(token)
+            .setQuery(addressSearched)
+            .build()
 
-        response?.let { array ->
-            if (!array.isEmpty) {
-                for (element in array) {
-                    data.add(
-                        Gson().fromJson(
-                            element.asJsonObject,
-                            CustomPlace::class.java
-                        )
+        placesClient.findAutocompletePredictions(request)
+            .addOnSuccessListener { response: FindAutocompletePredictionsResponse ->
+                val customPlaces = response.autocompletePredictions.map { prediction ->
+                    CustomPlace(
+                        prediction.placeId,
+                        prediction.getFullText(null).toString(),
+                        CustomLocation(CustomPlaceCoordinates(0.0, 0.0)),
+                        token
                     )
                 }
+                continuation.resume(customPlaces)
             }
-        }
-
-        return data
+            .addOnFailureListener { exception ->
+                continuation.resumeWithException(exception)
+            }
     }
+
+    suspend fun getPlaceLatLng(placeId: String, token: AutocompleteSessionToken): LatLng =
+        suspendCoroutine { continuation: Continuation<LatLng> ->
+            val request = FetchPlaceRequest
+                .builder(
+                    placeId,
+                    listOf(Place.Field.LAT_LNG)
+                )
+                .setSessionToken(token)
+                .build()
+
+            placesClient.fetchPlace(request)
+                .addOnSuccessListener { response: FetchPlaceResponse ->
+                    continuation.resume(response.place.latLng)
+                }
+                .addOnFailureListener { exception ->
+                    continuation.resumeWithException(exception)
+                }
+        }
 }
