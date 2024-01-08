@@ -51,7 +51,7 @@ Enfin, CatLife propose une fonction de prise de notes, permettant aux utilisateu
 
 N'hésitez pas à me contacter à l'aide de ces deux liens:
 
-- [GitHub discussions](https://github.com/morganesoula/catlifebis/discussions)
+- [GitHub discussions](https://github.com/morganesoula/CatLifeBis/discussions)
 - Par e-mail soula.morgane35@gmail.com
 
 ## Licence
