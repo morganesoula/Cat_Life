@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.msoula.catlife.core.presentation.navigation.NoteDetailScreenNavArgs
 import com.msoula.catlife.core.util.Resource
 import com.msoula.catlife.di.DispatcherModule
+import com.msoula.catlife.extension.printToLog
 import com.msoula.catlife.feature_inventory.data.state.UiActionEvent
 import com.msoula.catlife.feature_note.domain.use_case.crud.CrudNoteUseCase
 import com.msoula.catlife.feature_note_detail.data.NoteDetailUiState
@@ -18,7 +19,6 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import printToLog
 import javax.inject.Inject
 
 @HiltViewModel

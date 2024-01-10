@@ -1,5 +1,6 @@
 package com.msoula.catlife.feature_calendar.custom_places.domain.use_case
 
+import android.util.Log
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.libraries.places.api.model.AutocompleteSessionToken
 import com.google.android.libraries.places.api.model.Place
@@ -50,7 +51,11 @@ class FetchPlaceUseCase @Inject constructor(
             }
     }
 
-    suspend fun getPlaceLatLng(placeId: String, token: AutocompleteSessionToken): LatLng =
+    suspend fun getPlaceLatLng(
+        placeId: String,
+        token: AutocompleteSessionToken,
+        listener: (LatLng) -> Unit
+    ): LatLng =
         suspendCoroutine { continuation: Continuation<LatLng> ->
             val request = FetchPlaceRequest
                 .builder(
@@ -62,9 +67,13 @@ class FetchPlaceUseCase @Inject constructor(
 
             placesClient.fetchPlace(request)
                 .addOnSuccessListener { response: FetchPlaceResponse ->
-                    continuation.resume(response.place.latLng)
+                    continuation.let {
+                        Log.d("CATLIFE", "LatLng is: ${response.place.latLng}")
+                        response.place.latLng?.let { listener(it) }
+                    }
                 }
                 .addOnFailureListener { exception ->
+                    Log.e("CATLIFE", "Error in fetching place LatLng - $exception")
                     continuation.resumeWithException(exception)
                 }
         }

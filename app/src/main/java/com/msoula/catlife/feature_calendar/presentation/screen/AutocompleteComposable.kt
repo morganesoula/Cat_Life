@@ -38,10 +38,9 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import com.msoula.catlife.extension.notEmpty
 import com.msoula.catlife.extension.setToBold
 import com.msoula.catlife.feature_calendar.custom_places.data.CustomPlace
-import notEmpty
-
 @Composable
 fun <T> AutoCompleteTextView(
     modifier: Modifier,

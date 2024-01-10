@@ -15,6 +15,7 @@ import com.msoula.catlife.core.domain.use_case.crud.FetchLastInsertedCatIdUseCas
 import com.msoula.catlife.core.domain.use_case.crud.GetAllCatsUseCase
 import com.msoula.catlife.core.domain.use_case.crud.GetCatUseCase
 import com.msoula.catlife.core.domain.use_case.crud.InsertCatUseCase
+import com.msoula.catlife.extension.getAllRaces
 import com.msoula.catlife.feature_add_edit_cat.presentation.AddEditCatFormEvent
 import com.msoula.catlife.feature_add_edit_cat.presentation.AddEditCatViewModel
 import com.msoula.catlife.feature_add_edit_cat.presentation.screen.AddEditCatFormScreen
@@ -56,7 +57,6 @@ import com.msoula.catlife.feature_note.presentation.AddEditNoteViewModel
 import com.msoula.catlife.feature_note.presentation.screen.AddEditNoteFormScreen
 import com.msoula.catlife.feature_note_detail.presentation.NoteDetailViewModel
 import com.msoula.catlife.feature_note_detail.presentation.screen.NoteDetailScreen
-import com.msoula.catlife.getAllRaces
 import com.msoula.catlife.globalCurrentDay
 import com.ramcosta.composedestinations.navigation.EmptyDestinationsNavigator
 import commsoulacatlifedatabase.CatEntity

@@ -1,9 +1,10 @@
-package com.msoula.catlife
+package com.msoula.catlife.extension
 
 import android.content.ContentResolver
 import android.content.Context
 import android.net.Uri
 import android.provider.OpenableColumns
+import com.msoula.catlife.R
 import java.io.File
 
 fun Context.getFileName(uri: Uri): String? = when (uri.scheme) {

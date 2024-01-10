@@ -10,6 +10,7 @@ import com.msoula.catlife.core.presentation.OnLifecycleEvent
 import com.msoula.catlife.core.presentation.navigation.AddEditNoteFormScreenNavArgs
 import com.msoula.catlife.core.util.Resource
 import com.msoula.catlife.di.DispatcherModule
+import com.msoula.catlife.extension.printToLog
 import com.msoula.catlife.feature_note.data.state.AddEditNoteFormEvent
 import com.msoula.catlife.feature_note.data.state.AddEditNoteFormState
 import com.msoula.catlife.feature_note.data.state.CatForNoteUiState
@@ -31,7 +32,6 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import printToLog
 import java.time.LocalDateTime
 import java.time.ZoneOffset
 import javax.inject.Inject

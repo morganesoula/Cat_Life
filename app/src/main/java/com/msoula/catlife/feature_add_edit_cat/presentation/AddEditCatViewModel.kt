@@ -11,6 +11,7 @@ import com.msoula.catlife.core.presentation.OnLifecycleEvent
 import com.msoula.catlife.core.presentation.navigation.AddEditCatFormScreenNavArgs
 import com.msoula.catlife.core.util.Resource
 import com.msoula.catlife.di.DispatcherModule
+import com.msoula.catlife.extension.printToLog
 import com.msoula.catlife.feature_add_edit_cat.data.state.AddEditCatFormState
 import com.msoula.catlife.feature_add_edit_cat.data.state.mapToCat
 import com.msoula.catlife.feature_add_edit_cat.domain.use_case.cat_characteristics.ValidationImplUseCase
@@ -25,7 +26,6 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import printToLog
 import javax.inject.Inject
 
 @HiltViewModel

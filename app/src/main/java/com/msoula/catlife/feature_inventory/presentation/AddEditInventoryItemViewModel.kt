@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.msoula.catlife.core.domain.use_case.ValidationResult
 import com.msoula.catlife.core.presentation.OnLifecycleEvent
 import com.msoula.catlife.core.util.Resource
+import com.msoula.catlife.extension.printToLog
 import com.msoula.catlife.feature_inventory.data.state.AddEditInventoryFormState
 import com.msoula.catlife.feature_inventory.data.state.InventoryItemFormEvent
 import com.msoula.catlife.feature_inventory.domain.use_case.InventoryImplValidationUseCase
@@ -15,7 +16,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import printToLog
 import javax.inject.Inject
 
 @HiltViewModel

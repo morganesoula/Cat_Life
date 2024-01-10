@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.msoula.catlife.core.util.Resource
 import com.msoula.catlife.di.DispatcherModule
+import com.msoula.catlife.extension.printToLog
 import com.msoula.catlife.feature_inventory.data.state.UiActionEvent
 import com.msoula.catlife.feature_note.data.state.NoteFeedUiState
 import com.msoula.catlife.feature_note.data.state.NoteUiState
@@ -23,7 +24,6 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import printToLog
 import javax.inject.Inject
 
 @OptIn(ExperimentalCoroutinesApi::class)

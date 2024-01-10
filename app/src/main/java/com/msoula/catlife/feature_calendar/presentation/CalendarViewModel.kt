@@ -7,6 +7,7 @@ import com.msoula.catlife.core.presentation.navigation.CalendarScreenNavArgs
 import com.msoula.catlife.core.util.Resource
 import com.msoula.catlife.di.DispatcherModule
 import com.msoula.catlife.extension.convertToKotlinLocalDate
+import com.msoula.catlife.extension.printToLog
 import com.msoula.catlife.feature_calendar.data.state.CalendarFeedUiState
 import com.msoula.catlife.feature_calendar.data.state.CalendarUiState
 import com.msoula.catlife.feature_calendar.domain.use_case.CalendarEventUseCases
@@ -24,7 +25,6 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.datetime.toKotlinLocalDate
-import printToLog
 import javax.inject.Inject
 
 @HiltViewModel

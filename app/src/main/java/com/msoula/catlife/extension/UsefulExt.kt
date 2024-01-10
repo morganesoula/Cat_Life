@@ -1,3 +1,5 @@
+package com.msoula.catlife.extension
+
 import android.util.Log
 
 fun <T> Collection<T>?.notEmpty(): Boolean {

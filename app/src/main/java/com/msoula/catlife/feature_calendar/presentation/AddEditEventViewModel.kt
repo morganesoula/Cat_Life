@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.android.gms.maps.model.LatLng
 import com.google.android.libraries.places.api.model.AutocompleteSessionToken
 import com.msoula.catlife.R
 import com.msoula.catlife.core.domain.use_case.ValidationResult
@@ -12,6 +11,7 @@ import com.msoula.catlife.core.presentation.OnLifecycleEvent
 import com.msoula.catlife.core.presentation.navigation.AddEditEventFormScreenNavArgs
 import com.msoula.catlife.core.util.Resource
 import com.msoula.catlife.di.DispatcherModule
+import com.msoula.catlife.extension.printToLog
 import com.msoula.catlife.extension.resolveError
 import com.msoula.catlife.feature_calendar.custom_places.data.CustomPlace
 import com.msoula.catlife.feature_calendar.custom_places.data.state.State
@@ -35,7 +35,6 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import printToLog
 import java.time.ZoneId
 import javax.inject.Inject
 
@@ -469,16 +468,15 @@ class AddEditEventViewModel @Inject constructor(
     }
 
     private suspend fun getPlaceDetails(placeId: String, token: AutocompleteSessionToken) {
-        val latLng: LatLng = withContext(ioDispatcher) {
-            val result = fetchPlaceUseCase.getPlaceLatLng(placeId, token)
-            LatLng(result.latitude, result.longitude)
-        }
-
-        _state.update {
-            it.copy(
-                currentEventPlaceLat = latLng.latitude,
-                currentEventPlaceLng = latLng.longitude
-            )
+        withContext(ioDispatcher) {
+            fetchPlaceUseCase.getPlaceLatLng(placeId, token) { latLng ->
+                _state.update {
+                    it.copy(
+                        currentEventPlaceLat = latLng.latitude,
+                        currentEventPlaceLng = latLng.longitude
+                    )
+                }
+            }
         }
     }
 }

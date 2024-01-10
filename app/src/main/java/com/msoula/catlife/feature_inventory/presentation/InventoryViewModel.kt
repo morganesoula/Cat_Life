@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.msoula.catlife.core.util.Resource
 import com.msoula.catlife.di.DispatcherModule
+import com.msoula.catlife.extension.printToLog
 import com.msoula.catlife.feature_inventory.data.state.InventoryItemsFeedUiState
 import com.msoula.catlife.feature_inventory.data.state.InventoryState
 import com.msoula.catlife.feature_inventory.data.state.UiActionEvent
@@ -20,7 +21,6 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import printToLog
 import javax.inject.Inject
 
 @HiltViewModel

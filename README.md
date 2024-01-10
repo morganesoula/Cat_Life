@@ -14,6 +14,7 @@
 <br />
 
 # CatLife (en cours de développement - V1 courant 2023)
+
 ## A propos
 
 <table>
@@ -23,7 +24,9 @@
 
 </br> De plus, CatLife facilite la gestion de l'alimentation et de l'hygiène du chat en proposant un inventaire pratique. Les propriétaires peuvent ainsi surveiller le stock de croquettes, de litières et d'autres fournitures essentielles pour s'assurer que leur chat ne manque de rien.
 
-Enfin, CatLife propose une fonction de prise de notes, permettant aux utilisateurs de consigner tout changement de comportement, d'humeur ou de santé chez leur chat. Cela offre une manière simple de garder un œil attentif sur la santé et le bien-être général de leur animal de compagnie.
+Enfin, CatLife propose une fonction de prise de notes, permettant aux utilisateurs de consigner tout
+changement de comportement, d'humeur ou de santé chez leur chat. Cela offre une manière simple de
+garder un œil attentif sur la santé et le bien-être général de leur animal de compagnie.
 </td>
   </tr>
 </table>
@@ -36,16 +39,31 @@ Enfin, CatLife propose une fonction de prise de notes, permettant aux utilisateu
 
 * Ce projet Android est entièrement développé avec [Kotlin](https://kotlinlang.org/).
 * L'UI est entièrement écrite avec [Jetpack Compose](https://developer.android.com/jetpack/compose).
-* L'architecture de ce projet associe [MVVM et Clean Architecture](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc8GZWCbUm3tBXKeqIi3rcVX).
-* La base de donnée choisie est [SQLDelight](https://cashapp.github.io/sqldelight/2.0.0/) afin de faciliter la transition lors du passage à [KMP](https://kotlinlang.org/docs/multiplatform.html).
-* Les [coroutines Kotlin](https://kotlinlang.org/docs/reference/coroutines/coroutines-guide.html) et [Flow API](https://kotlinlang.org/docs/flow.html#flows) sont utilisés pour réaliser les appels au réseau et les échanges avec la base de données.
-* La navigation est gérée par [Compose Destination](https://github.com/raamcosta/compose-destinations).
+* L'architecture de ce projet
+  associe [MVVM et Clean Architecture](https://www.youtube.com/playlist?list=PLWz5rJ2EKKc8GZWCbUm3tBXKeqIi3rcVX).
+* La base de donnée choisie est [SQLDelight](https://cashapp.github.io/sqldelight/2.0.0/) afin de
+  faciliter la transition lors du passage à [KMP](https://kotlinlang.org/docs/multiplatform.html).
+* Les [coroutines Kotlin](https://kotlinlang.org/docs/reference/coroutines/coroutines-guide.html)
+  et [Flow API](https://kotlinlang.org/docs/flow.html#flows) sont utilisés pour réaliser les appels
+  au réseau et les échanges avec la base de données.
+* La navigation est gérée
+  par [Compose Destination](https://github.com/raamcosta/compose-destinations).
 * Les images au sein de l'application sont manipulées par [Coil](https://github.com/coil-kt/coil).
-* Le calendrier vient d'un projet open-source [Kalendar](https://github.com/hi-manshu/Kalendar). Différentes PR ont été proposées.
+* Le calendrier vient d'un projet open-source [Kalendar](https://github.com/hi-manshu/Kalendar).
+  Différentes PR ont été proposées.
 * [Hilt](https://dagger.dev/hilt/) a été choisie pour l'injection de dépendance.
-* Les tests unitaires se basent sur [JUnit 4](https://junit.org/junit4/) et les tests fonctionnels utilisent [Maestro](https://maestro.mobile.dev/).
+* Les tests unitaires se basent sur [JUnit 4](https://junit.org/junit4/) et les tests fonctionnels
+  utilisent [Maestro](https://maestro.mobile.dev/).
 
 ## Fonctionnalités
+
+<p style="text-align: center">
+<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/cat_form_fr_light.png" alt="cat_form_light" width="45%">
+<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/cat_form_fr_dark.png" alt="cat_form_dark" width="45%">
+</p>
+
+<h3>Ajout d'un chat</h3>
+<p>Avec ce formulaire, vous pouvez renseigner tous les éléments nécessaires à la création du profil de votre chat. Renseignez son nom, sa date de naissance, son sexe, son age, son poids, sa race, sa robe, son cursus médical. Complétez en ajoutant une photo de votre animal de compagnie.</p>
 
 ## Support
 
@@ -56,5 +74,5 @@ N'hésitez pas à me contacter à l'aide de ces deux liens:
 
 ## Licence
 
-Ce projet est couvert par la licence Apache License (Version 2.0). </br>
+Ce projet est couvert par la licence MIT. </br>
 Voir [LICENSE](LICENSE) pour plus d'informations.

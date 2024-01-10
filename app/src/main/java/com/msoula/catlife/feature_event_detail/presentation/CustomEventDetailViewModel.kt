@@ -6,6 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.msoula.catlife.core.presentation.navigation.EventDetailScreenNavArgs
 import com.msoula.catlife.core.util.Resource
 import com.msoula.catlife.di.DispatcherModule
+import com.msoula.catlife.extension.printToLog
 import com.msoula.catlife.feature_calendar.domain.use_case.CalendarEventUseCases
 import com.msoula.catlife.feature_event_detail.data.state.CustomEventDetailState
 import com.msoula.catlife.feature_inventory.data.state.UiActionEvent
@@ -19,7 +20,6 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import printToLog
 import javax.inject.Inject
 
 @HiltViewModel
