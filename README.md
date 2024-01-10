@@ -17,9 +17,9 @@
 
 #### Table des matières
 [A Propos](#a-propos)<br />
+[Fonctionnalités - Screenshots](#fonctionnalités---screenshots)<br />
 [Intégration](#intégration)<br />
 [Technologies utilisées](#technologies-utilisées)<br />
-[Fonctionnalités - Screenshots](#fonctionnalités---screenshots)<br />
 [Support](#support)<br />
 [Licence](#licence)
 
@@ -38,6 +38,18 @@ garder un œil attentif sur la santé et le bien-être général de leur animal 
 </td>
   </tr>
 </table>
+
+## Fonctionnalités - Screenshots
+
+<p style="text-align: center">
+<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/main_page_fr_light.png" alt="main page" width="45%">
+<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/cat_form_fr_light.png" alt="cat form" width="45%"><br />
+<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/cat_detail_fr_light.png" alt="cat detail" width="45%">
+<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/calendar_fr_light.png" alt="calendar" width="45%"><br />
+<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/event_detail_fr_light.png" alt="event detail" width="45%">
+<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/note_detail_fr_light.png" alt="note detail" width="45%"><br />
+<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/inventory_fr_light.png" alt="inventory" width="45%">
+</p>
 
 ## Intégration
 
@@ -62,18 +74,6 @@ garder un œil attentif sur la santé et le bien-être général de leur animal 
 * [Hilt](https://dagger.dev/hilt/) a été choisie pour l'injection de dépendance.
 * Les tests unitaires se basent sur [JUnit 4](https://junit.org/junit4/) et les tests fonctionnels
   utilisent [Maestro](https://maestro.mobile.dev/).
-
-## Fonctionnalités - Screenshots
-
-<p style="text-align: center">
-<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/main_page_fr_light.png" alt="main page" width="45%">
-<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/cat_form_fr_light.png" alt="cat form" width="45%"><br />
-<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/cat_detail_fr_light.png" alt="cat detail" width="45%">
-<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/calendar_fr_light.png" alt="calendar" width="45%"><br />
-<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/event_detail_fr_light.png" alt="event detail" width="45%">
-<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/note_detail_fr_light.png" alt="note detail" width="45%"><br />
-<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/inventory_fr_light.png" alt="inventory" width="45%">
-</p>
 
 ## Support
 
