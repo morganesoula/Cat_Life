@@ -22,7 +22,7 @@
     <td>
       CatLife est un projet open-source dédié aux amoureux des chats. Cette application Android offre un ensemble complet d'outils pour prendre soin de son animal au mieux. Avec CatLife, les propriétaires peuvent suivre facilement les soins vétérinaires, les vaccinations et les traitements médicaux grâce à un suivi vétérinaire intégré. Le calendrier permet de planifier et de gérer les rendez-vous importants pour assurer le bien-être de leur compagnon félin. 
 
-</br> De plus, CatLife facilite la gestion de l'alimentation et de l'hygiène du chat en proposant un inventaire pratique. Les propriétaires peuvent ainsi surveiller le stock de croquettes, de litières et d'autres fournitures essentielles pour s'assurer que leur chat ne manque de rien.
+<br /> De plus, CatLife facilite la gestion de l'alimentation et de l'hygiène du chat en proposant un inventaire pratique. Les propriétaires peuvent ainsi surveiller le stock de croquettes, de litières et d'autres fournitures essentielles pour s'assurer que leur chat ne manque de rien.
 
 Enfin, CatLife propose une fonction de prise de notes, permettant aux utilisateurs de consigner tout
 changement de comportement, d'humeur ou de santé chez leur chat. Cela offre une manière simple de
@@ -55,11 +55,16 @@ garder un œil attentif sur la santé et le bien-être général de leur animal 
 * Les tests unitaires se basent sur [JUnit 4](https://junit.org/junit4/) et les tests fonctionnels
   utilisent [Maestro](https://maestro.mobile.dev/).
 
-## Fonctionnalités
+## Fonctionnalités - Screenshots
 
 <p style="text-align: center">
-<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/cat_form_fr_light.png" alt="cat_form_light" width="45%">
-<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/cat_form_fr_dark.png" alt="cat_form_dark" width="45%">
+<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/main_page_fr_light.png" alt="main page" width="45%">
+<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/cat_form_fr_light.png" alt="cat form" width="45%"><br />
+<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/cat_detail_fr_light.png" alt="cat detail" width="45%">
+<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/calendar_fr_light.png" alt="calendar" width="45%"><br />
+<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/event_detail_fr_light.png" alt="event detail" width="45%">
+<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/note_detail_fr_light.png" alt="note detail" width="45%"><br />
+<img src="app/src/main/java/com/msoula/catlife/doc/screenshots/inventory_fr_light.png" alt="inventory" width="45%">
 </p>
 
 <h3>Ajout d'un chat</h3>
