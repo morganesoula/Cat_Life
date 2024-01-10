@@ -13,7 +13,15 @@
 </div>
 <br />
 
-# CatLife (en cours de développement - V1 courant 2023)
+# CatLife - [V1 disponible ici](https://play.google.com/store/apps/details?id=com.msoula.catlife)
+
+#### Table des matières
+[A Propos](#a-propos)
+[Intégration](#intégration)
+[Technologies utilisées](#technologies-utilisées)
+[Fonctionnalités - Screenshots](#fonctionnalités---screenshots)
+[Support](#support)
+[Licence](#licence)
 
 ## A propos
 
@@ -66,9 +74,6 @@ garder un œil attentif sur la santé et le bien-être général de leur animal 
 <img src="app/src/main/java/com/msoula/catlife/doc/screenshots/note_detail_fr_light.png" alt="note detail" width="45%"><br />
 <img src="app/src/main/java/com/msoula/catlife/doc/screenshots/inventory_fr_light.png" alt="inventory" width="45%">
 </p>
-
-<h3>Ajout d'un chat</h3>
-<p>Avec ce formulaire, vous pouvez renseigner tous les éléments nécessaires à la création du profil de votre chat. Renseignez son nom, sa date de naissance, son sexe, son age, son poids, sa race, sa robe, son cursus médical. Complétez en ajoutant une photo de votre animal de compagnie.</p>
 
 ## Support
 
