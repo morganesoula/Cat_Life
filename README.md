@@ -16,11 +16,11 @@
 # CatLife - [V1 disponible ici](https://play.google.com/store/apps/details?id=com.msoula.catlife)
 
 #### Table des matières
-[A Propos](#a-propos)
-[Intégration](#intégration)
-[Technologies utilisées](#technologies-utilisées)
-[Fonctionnalités - Screenshots](#fonctionnalités---screenshots)
-[Support](#support)
+[A Propos](#a-propos)<br />
+[Intégration](#intégration)<br />
+[Technologies utilisées](#technologies-utilisées)<br />
+[Fonctionnalités - Screenshots](#fonctionnalités---screenshots)<br />
+[Support](#support)<br />
 [Licence](#licence)
 
 ## A propos
